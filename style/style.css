@@ -1,7 +1,3 @@
-/* ==========================================================
-   TRAVLOG - Landing page (versión de computador, 1440 px)
-   Commit 1: base + menú + portada + logos + servicios
-   ========================================================== */
 
 /* ---------- Variables (colores y fuentes del diseño en Figma) ---------- */
 :root {
@@ -44,7 +40,6 @@ a {
   color: inherit;
 }
 
-/* Contenedor central: 1184 px de ancho como en el diseño */
 .contenedor {
   width: 100%;
   max-width: 1184px;
@@ -275,7 +270,6 @@ a {
 /* ==========================================================
    SERVICIOS
    ========================================================== */
-/* Las tarjetas se salen un poco por la derecha, como en el diseño */
 .servicios {
   overflow: hidden;
 }
@@ -363,7 +357,6 @@ a {
 /* ==========================================================
    DESTINOS
    ========================================================== */
-/* Título de sección reutilizable (sobretítulo rosado + título grande) */
 .titulo-seccion {
   display: flex;
   flex-direction: column;
@@ -391,7 +384,6 @@ a {
   justify-content: space-between;
 }
 
-/* Botones redondos con flechas (también se usan en testimonios) */
 .flechas {
   display: flex;
   gap: 32px;
@@ -500,8 +492,6 @@ a {
   line-height: 1.6;
   color: var(--texto-suave);
 }
-
-/* La imagen pega al borde izquierdo de la pantalla */
 .travel {
   display: flex;
   align-items: flex-end;
@@ -561,7 +551,6 @@ a {
 /* ==========================================================
    SERVICIOS DESTACADOS (KEY FEATURES)
    ========================================================== */
-/* La imagen de la derecha pega al borde derecho de la pantalla */
 .features {
   display: flex;
   align-items: flex-start;
@@ -638,4 +627,206 @@ a {
   flex: 0 0 693px;
   width: 693px;
   height: 869px;
+}
+/* ==========================================================
+   TESTIMONIOS
+   ========================================================== */
+.testimonios__contenido {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  padding: 64px 0;
+}
+
+.testimonio {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+  text-align: center;
+}
+
+.titulo-seccion--centro {
+  align-items: center;
+}
+
+.testimonio__foto {
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+}
+
+.testimonio__persona {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.testimonio__nombre {
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.2;
+  color: var(--naranja);
+}
+
+.testimonio__nombre span {
+  font-size: 23px;
+  color: rgba(25, 24, 37, 0.75);
+}
+
+.estrellas {
+  display: flex;
+  gap: 16px;
+}
+
+.testimonio__texto {
+  max-width: 800px;
+  font-family: var(--fuente-titulos);
+  font-weight: 400;
+  font-size: 23px;
+  line-height: 1.6;
+  color: rgba(25, 24, 37, 0.75);
+}
+/* ==========================================================
+   BOLETÍN
+   ========================================================== */
+.boletin {
+  padding: 64px 0;
+}
+
+.boletin__caja {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  padding: 128px 64px;
+  background: rgba(250, 205, 73, 0.08);
+  border-radius: 32px;
+}
+
+.boletin__titulo {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  text-align: center;
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.boletin__titulo h2 {
+  font-size: 55px;
+  color: var(--negro);
+}
+
+.boletin__form {
+  display: flex;
+  gap: 64px;
+}
+
+.campo {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 32px;
+  background: var(--blanco);
+  border-radius: 32px;
+}
+
+.campo input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+  font-size: 23px;
+  line-height: 1.2;
+  color: var(--negro);
+}
+
+.campo input::placeholder {
+  color: rgba(25, 24, 37, 0.75);
+}
+
+.boton-grande {
+  padding: 32px 64px;
+  border: none;
+  border-radius: 32px;
+  background: var(--primario);
+  color: var(--blanco);
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+  font-size: 23px;
+  line-height: 1.2;
+  cursor: pointer;
+}
+/* ==========================================================
+   PIE DE PÁGINA
+   ========================================================== */
+.footer__contenido {
+  display: flex;
+  gap: 64px;
+  padding: 64px 0;
+}
+
+.footer__marca {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.footer__descripcion {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.footer__descripcion p {
+  font-family: var(--fuente-titulos);
+  font-weight: 400;
+  font-size: 23px;
+  line-height: 1.6;
+  color: var(--texto-suave);
+}
+
+.redes {
+  display: flex;
+  gap: 32px;
+}
+
+.footer__columnas {
+  flex: 1;
+  display: flex;
+  gap: 32px;
+}
+
+.footer__columna {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(25, 24, 37, 0.75);
+}
+
+.footer__columna h4 {
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+  font-size: 23px;
+  line-height: 1.2;
+  color: var(--negro);
+}
+
+.footer__columna address {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-style: normal;
 }
