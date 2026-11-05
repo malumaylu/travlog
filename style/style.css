@@ -1,0 +1,641 @@
+/* ==========================================================
+   TRAVLOG - Landing page (versión de computador, 1440 px)
+   Commit 1: base + menú + portada + logos + servicios
+   ========================================================== */
+
+/* ---------- Variables (colores y fuentes del diseño en Figma) ---------- */
+:root {
+  --primario: #5d50c6;
+  --secundario: #f85e9f;
+  --naranja: #ff5722;
+  --negro: #191825;
+  --oscuro: #222831;
+  --medio: #393e46;
+  --claro: #eeeeee;
+  --blanco: #ffffff;
+  --texto-suave: rgba(25, 24, 37, 0.5);
+  --borde-suave: rgba(25, 24, 37, 0.1);
+
+  --fuente-titulos: "DM Sans", sans-serif;
+  --fuente-texto: "Inter", sans-serif;
+}
+
+/* ---------- Reinicio básico ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fuente-texto);
+  color: var(--negro);
+  background: var(--blanco);
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Contenedor central: 1184 px de ancho como en el diseño */
+.contenedor {
+  width: 100%;
+  max-width: 1184px;
+  margin: 0 auto;
+}
+
+/* ---------- Botones ---------- */
+.boton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 32px;
+  border-radius: 100px;
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.boton--blanco {
+  background: var(--blanco);
+  color: var(--oscuro);
+}
+
+.boton--primario {
+  background: var(--primario);
+  color: var(--claro);
+}
+
+.boton--sombra {
+  box-shadow: 0 12px 24px rgba(93, 80, 198, 0.3);
+}
+
+.boton--borde {
+  background: var(--blanco);
+  color: var(--oscuro);
+  border: 1px solid var(--claro);
+}
+
+/* ==========================================================
+   MENÚ
+   ========================================================== */
+.menu__contenido {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 0;
+}
+
+.menu__logo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: var(--fuente-titulos);
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 40px;
+  color: var(--negro);
+}
+
+.menu__enlaces {
+  display: flex;
+  gap: 64px;
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--texto-suave);
+}
+
+.menu__enlaces .activo {
+  color: var(--oscuro);
+}
+
+.menu__acciones {
+  display: flex;
+}
+
+/* ==========================================================
+   PORTADA (HERO)
+   ========================================================== */
+.hero__contenido {
+  display: flex;
+  align-items: center;
+  padding: 64px 0;
+}
+
+.hero__texto {
+  flex: 0 0 412px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 43px;
+}
+
+.etiqueta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 32px;
+  border-radius: 100px;
+  background: var(--blanco);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.07);
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--secundario);
+}
+
+.hero h1 {
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+  font-size: 69px;
+  line-height: 1.2;
+  color: #000;
+}
+
+.rosado {
+  color: var(--secundario);
+}
+
+.hero__descripcion {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--texto-suave);
+}
+
+.hero__botones {
+  display: flex;
+  gap: 16px;
+}
+
+/* ----- Lado derecho de la portada: fotos + insignias ----- */
+.hero__visual {
+  position: relative;
+  flex: 0 0 772px;
+  height: 713px;
+}
+
+.hero__mapa {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 772px;
+  height: 287px;
+}
+
+.hero__fotos {
+  position: absolute;
+  top: 75px;
+  left: 91px;
+  display: flex;
+  align-items: center;
+  gap: 31px;
+}
+
+.hero__columna {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.foto {
+  width: 272px;
+  object-fit: cover;
+  border-radius: 32px;
+  background: #d9d9d9;
+}
+
+.foto--300 { height: 300px; }
+.foto--400 { height: 400px; }
+
+.insignia {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  border-radius: 100px;
+  box-shadow: 0 19px 19px rgba(0, 0, 0, 0.09);
+}
+
+.insignia--rosada,
+.insignia--naranja {
+  padding: 16px;
+}
+
+.insignia--rosada {
+  top: 341px;
+  left: 56px;
+  background: var(--secundario);
+}
+
+.insignia--naranja {
+  top: 649px;
+  left: 474px;
+  background: var(--naranja);
+}
+
+.insignia--lugares {
+  top: 488px;
+  left: 592px;
+  gap: 8px;
+  padding: 16px 32px;
+  background: var(--blanco);
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--medio);
+}
+
+/* ==========================================================
+   LOGOS DE MARCAS
+   ========================================================== */
+.marcas__contenido {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 64px 0;
+}
+
+.marcas__contenido img {
+  height: 32px;
+  width: auto;
+}
+
+/* ==========================================================
+   SERVICIOS
+   ========================================================== */
+/* Las tarjetas se salen un poco por la derecha, como en el diseño */
+.servicios {
+  overflow: hidden;
+}
+
+.servicios__contenido {
+  display: flex;
+  align-items: center;
+  width: 1536px;
+  margin-left: max(24px, calc((100vw - 1184px) / 2));
+  padding: 64px 0;
+}
+
+.servicios__titulo {
+  flex: 0 0 444px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.sobretitulo {
+  font-size: 23px;
+  letter-spacing: 4.6px;
+  text-transform: uppercase;
+  color: var(--secundario);
+}
+
+.servicios__titulo h2 {
+  font-size: 44px;
+  color: var(--negro);
+}
+
+.servicios__tarjetas {
+  display: flex;
+  gap: 21px;
+  width: 1092px;
+}
+
+.tarjeta {
+  flex: 1;
+  height: 443px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+  padding: 64px;
+  background: var(--blanco);
+  border: 1px solid var(--borde-suave);
+  border-radius: 32px;
+  text-align: center;
+}
+
+.tarjeta--destacada {
+  border-color: transparent;
+  box-shadow: 0 41px 44px rgba(0, 0, 0, 0.1);
+}
+
+.tarjeta img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+}
+
+.tarjeta__texto {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.tarjeta h3 {
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.2;
+  color: var(--negro);
+}
+
+.tarjeta p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--texto-suave);
+}
+/* ==========================================================
+   DESTINOS
+   ========================================================== */
+/* Título de sección reutilizable (sobretítulo rosado + título grande) */
+.titulo-seccion {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.titulo-seccion h2 {
+  font-size: 44px;
+  color: var(--negro);
+}
+
+.destinos__contenido {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  padding: 64px 0;
+}
+
+.destinos__encabezado {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Botones redondos con flechas (también se usan en testimonios) */
+.flechas {
+  display: flex;
+  gap: 32px;
+}
+
+.flecha {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 1px solid var(--borde-suave);
+  cursor: pointer;
+}
+
+.flecha--blanca {
+  background: var(--blanco);
+  color: var(--negro);
+}
+
+.flecha--morada {
+  background: var(--primario);
+  border-color: var(--primario);
+  color: var(--blanco);
+}
+
+.destinos__tarjetas {
+  display: flex;
+  gap: 32px;
+}
+
+.destino {
+  flex: 1;
+  height: 575px;
+  display: flex;
+  flex-direction: column;
+  background: var(--blanco);
+  border-radius: 32px;
+  box-shadow: 0 32px 36px rgba(0, 0, 0, 0.05);
+}
+
+.destino__foto {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 32px 32px 0 0;
+}
+
+.destino__info {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 32px;
+}
+
+.destino__datos {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.destino__fila {
+  display: flex;
+  gap: 16px;
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+  font-size: 23px;
+  line-height: 1.2;
+}
+
+.destino__fila h3 {
+  flex: 1;
+  font-size: inherit;
+  color: var(--negro);
+}
+
+.precio {
+  color: var(--secundario);
+  white-space: nowrap;
+}
+
+.destino__lugar {
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(25, 24, 37, 0.75);
+}
+
+.destino__rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+  font-size: 23px;
+  line-height: 1.2;
+  color: var(--naranja);
+}
+/* ==========================================================
+   TRAVEL POINT
+   ========================================================== */
+.texto-suave {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--texto-suave);
+}
+
+/* La imagen pega al borde izquierdo de la pantalla */
+.travel {
+  display: flex;
+  align-items: flex-end;
+  padding: 64px max(24px, calc((100vw - 1184px) / 2)) 64px 0;
+}
+
+.travel__imagen {
+  flex: 0 0 871px;
+  width: 871px;
+  height: 697px;
+}
+
+.travel__texto {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.travel__intro {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.estadisticas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.estadistica {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 32px;
+  background: var(--blanco);
+  border: 1px solid var(--borde-suave);
+  border-radius: 32px;
+  white-space: nowrap;
+}
+
+.estadistica strong {
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 1.2;
+  color: var(--naranja);
+}
+
+.estadistica span {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--negro);
+}
+/* ==========================================================
+   SERVICIOS DESTACADOS (KEY FEATURES)
+   ========================================================== */
+/* La imagen de la derecha pega al borde derecho de la pantalla */
+.features {
+  display: flex;
+  align-items: flex-start;
+  gap: 70px;
+  padding: 64px 0 64px max(24px, calc((100vw - 1184px) / 2));
+}
+
+.features__texto {
+  flex: 0 0 549px;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.features__intro {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.features__lista {
+  display: flex;
+  flex-direction: column;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 32px;
+  background: var(--blanco);
+  border: 1px solid transparent;
+  border-radius: 32px;
+}
+
+.feature--borde {
+  border-color: var(--borde-suave);
+}
+
+.feature__icono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 100px;
+  height: 100px;
+  border-radius: 32px;
+}
+
+.feature__icono--naranja { background: var(--naranja); }
+.feature__icono--amarillo { background: #facd49; }
+.feature__icono--rosado { background: var(--secundario); }
+
+.feature__texto {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.feature__texto h3 {
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+  font-size: 23px;
+  line-height: 1.2;
+  color: var(--negro);
+}
+
+.feature__texto p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--texto-suave);
+}
+
+.features__imagen {
+  flex: 0 0 693px;
+  width: 693px;
+  height: 869px;
+}
